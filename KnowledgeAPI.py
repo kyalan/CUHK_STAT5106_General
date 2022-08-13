@@ -6,7 +6,7 @@ class knowledger():
         from getpass import getpass        
         self.api_key = getpass('Please input Google MAP API key:')
 
-    def getKnowjs(self, query, verbose=False):
+    def getKnowjs(self, query, language='en', verbose=False):
         
         import urllib.request, urllib.parse, urllib.error
         import json
@@ -29,6 +29,7 @@ class knowledger():
             'limit': 10,
             'indent': True,
             'key': self.api_key,
+            'language': language,
         }
         url = serviceurl + '?' + urllib.parse.urlencode(params)
 
