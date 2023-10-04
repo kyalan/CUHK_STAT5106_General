@@ -3,7 +3,9 @@ class geographer():
     api_key = None
     
     def __init__(self):
-        self.api_key = input('Please input Google MAP API key:')
+        from getpass import getpass
+
+        self.api_key = getpass('Please input Google MAP API key:')
 
     def getGeojs(self, address, verbose=False):
 
